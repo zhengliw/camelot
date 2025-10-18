@@ -68,9 +68,6 @@ class PDFHandler:
             filepath = download_url(str(filepath))
         self.filepath: StrByteType | Path | str = filepath
 
-        if isinstance(filepath, str) and not filepath.lower().endswith(".pdf"):
-            raise NotImplementedError("File format not supported")
-
         if password is None:
             self.password = ""  # noqa: S105
         else:
